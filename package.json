@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "styles": [
+    "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+    "node_modules/primeng/resources/primeng.min.css"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.2.5",
@@ -19,6 +23,8 @@
     "@angular/platform-browser": "~10.2.5",
     "@angular/platform-browser-dynamic": "~10.2.5",
     "@angular/router": "~10.2.5",
+    "primeicons": "^6.0.1",
+    "primeng": "^17.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

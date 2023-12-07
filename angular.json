@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "formulario-agendamento"
+    }
+  },
+  "defaultProject": "formulario-agendamento",
+  "cli": {
+    "analytics": "4b9966f6-9422-43e2-85c5-6048feb62bc9"
+  }
 }
