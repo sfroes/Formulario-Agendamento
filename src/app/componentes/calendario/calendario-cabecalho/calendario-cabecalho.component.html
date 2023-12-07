@@ -8,7 +8,7 @@
         [(viewDate)]="viewDate"
         (viewDateChange)="viewDateChange.next(viewDate)"
       >
-        Previous
+        Anterior
       </div>
       <div
         class="btn btn-outline-secondary"
@@ -16,7 +16,7 @@
         [(viewDate)]="viewDate"
         (viewDateChange)="viewDateChange.next(viewDate)"
       >
-        Today
+        Hoje
       </div>
       <div
         class="btn btn-primary"
@@ -25,7 +25,7 @@
         [(viewDate)]="viewDate"
         (viewDateChange)="viewDateChange.next(viewDate)"
       >
-        Next
+        Próximo
       </div>
     </div>
   </div>
@@ -39,21 +39,21 @@
         (click)="viewChange.emit(CalendarView.Month)"
         [class.active]="view === CalendarView.Month"
       >
-        Month
+        Mês
       </div>
       <div
         class="btn btn-primary"
         (click)="viewChange.emit(CalendarView.Week)"
         [class.active]="view === CalendarView.Week"
       >
-        Week
+        Semana
       </div>
       <div
         class="btn btn-primary"
         (click)="viewChange.emit(CalendarView.Day)"
         [class.active]="view === CalendarView.Day"
       >
-        Day
+        Dia
       </div>
     </div>
   </div>

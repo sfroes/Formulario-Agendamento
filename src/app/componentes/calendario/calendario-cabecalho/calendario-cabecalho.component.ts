@@ -13,7 +13,7 @@ export class CalendarioCabecalhoComponent implements OnInit {
 
   @Input() viewDate: Date;
 
-  @Input() locale: string = 'en';
+  @Input() locale: string = 'pt-BR';
 
   @Output() viewChange = new EventEmitter<CalendarView>();
 

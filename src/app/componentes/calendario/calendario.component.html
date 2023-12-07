@@ -18,18 +18,19 @@
 </app-calendario-cabecalho>
 
 <div class="alert alert-info">
-  Click on a day or time slot on the view.
-  <strong *ngIf="clickedDate"
-    >You clicked on this time: {{ clickedDate | date : "medium" }}</strong
+  Você cliclou no dia:
+  <strong *ngIf="clickedDate">
+    {{ clickedDate | date : "medium" : "" : "pt-BR" }}</strong
   >
   <strong *ngIf="clickedColumn !== undefined"
-    >You clicked on this column: {{ clickedColumn }}</strong
+    >Você cliclou no dia: {{ clickedColumn }}</strong
   >
 </div>
 
 <div [ngSwitch]="view">
   <mwl-calendar-month-view
     *ngSwitchCase="'month'"
+    [locale]="locale"
     [viewDate]="viewDate"
     [events]="events"
     (columnHeaderClicked)="clickedColumn = $event.isoDayNumber"
@@ -39,6 +40,7 @@
   <mwl-calendar-week-view
     *ngSwitchCase="'week'"
     [viewDate]="viewDate"
+    [locale]="locale"
     [events]="events"
     (dayHeaderClicked)="clickedDate = $event.day.date"
     (hourSegmentClicked)="clickedDate = $event.date"
@@ -47,6 +49,7 @@
   <mwl-calendar-day-view
     *ngSwitchCase="'day'"
     [viewDate]="viewDate"
+    [locale]="locale"
     [events]="events"
     (hourSegmentClicked)="clickedDate = $event.date"
   >
