@@ -1,3 +1,6 @@
+import { registerLocaleData } from '@angular/common';
+import localePtExtra from '@angular/common/locales/extra/pt';
+import localePt from '@angular/common/locales/pt';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -20,9 +23,13 @@ import { CalendarioCabecalhoComponent } from './componentes/calendario/calendari
 export function momentAdapterFactory() {
   return adapterFactory(moment);
 }
-
+registerLocaleData(localePt, 'pt-BR', localePtExtra);
 @NgModule({
-  declarations: [AppComponent, CalendarioComponent, CalendarioCabecalhoComponent],
+  declarations: [
+    AppComponent,
+    CalendarioComponent,
+    CalendarioCabecalhoComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
