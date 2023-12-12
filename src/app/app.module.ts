@@ -19,6 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarioComponent } from './componentes/calendario/calendario.component';
 import { CalendarioCabecalhoComponent } from './componentes/calendario/calendario-cabecalho/calendario-cabecalho.component';
+import { ButtonModule } from 'primeng/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function momentAdapterFactory() {
   return adapterFactory(moment);
@@ -33,6 +35,9 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     CalendarModule.forRoot(
       {
