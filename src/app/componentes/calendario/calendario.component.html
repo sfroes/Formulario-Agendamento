@@ -34,7 +34,7 @@
     [viewDate]="viewDate"
     [events]="events"
     (columnHeaderClicked)="clickedColumn = $event.isoDayNumber"
-    (dayClicked)="clickedDate = $event.day.date"
+    (dayClicked)="selecionarHorarios($event.day.date)"
   >
   </mwl-calendar-month-view>
   <mwl-calendar-week-view
@@ -43,7 +43,7 @@
     [locale]="locale"
     [events]="events"
     (dayHeaderClicked)="clickedDate = $event.day.date"
-    (hourSegmentClicked)="clickedDate = $event.date"
+    (hourSegmentClicked)="selecionarHorarios($event.date)"
   >
   </mwl-calendar-week-view>
   <mwl-calendar-day-view
@@ -55,3 +55,31 @@
   >
   </mwl-calendar-day-view>
 </div>
+<div style="width: 100%" *ngFor="let horario of horariosEvento">
+  <input
+    type="radio"
+    name="evento-hora"
+    [value]="horario.meta"
+    (click)="selecionarOpcoesDia(horario.meta)"
+  />
+  <label [for]="horario.meta" class="ml-2"
+    >{{ horario.start | date : "HH:mm" }} às
+    {{ horario.end | date : "HH:mm" }}</label
+  >
+</div>
+
+<hr />
+<form [formGroup]="formOpcao">
+  <div style="width: 100%" *ngFor="let opcao of opcoesDia">
+    <input type="radio" formControlName="opcaoDia" [value]="opcao" />
+    <label class="ml-2">{{ opcao }}</label>
+  </div>
+  <div style="width: 100%; text-align: center">
+    <p-button
+      label="Submit"
+      [loading]="loading"
+      (onClick)="SalvarDiaEvento()"
+    ></p-button>
+  </div>
+</form>
+<!-- <p>{{ formOpcao | json }}</p> -->
